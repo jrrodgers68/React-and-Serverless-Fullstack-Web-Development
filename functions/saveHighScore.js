@@ -9,7 +9,7 @@ exports.handler = async (event) => {
   }
 
   const { score, name } = JSON.parse(event.body);
-  if (!score || !name) {
+  if (typeof score === 'undefined' || !name) {
     return {
       statusCode: 400,
       body: JSON.stringify({ err: 'bad request' }),
