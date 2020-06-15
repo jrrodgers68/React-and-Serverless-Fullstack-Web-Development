@@ -8,8 +8,14 @@ import Navbar from './components/Navbar';
 import { Container } from './styled/Container';
 import { Main } from './styled/Main';
 import Global from './styled/Global';
+import { useAuth0 } from '../src/react-auth0-spa';
 
 function App() {
+  const { loading } = useAuth0();
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return (
     <Router>
       <Global />
