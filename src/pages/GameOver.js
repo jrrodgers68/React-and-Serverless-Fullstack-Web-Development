@@ -39,7 +39,7 @@ export default function GameOver({ history }) {
     if (isAuthenticated) {
       saveHighScore();
     }
-  }, [score]);
+  }, [score, getTokenSilently, isAuthenticated]);
 
   return (
     <div>

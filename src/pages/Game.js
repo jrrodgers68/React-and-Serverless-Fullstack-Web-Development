@@ -68,7 +68,7 @@ export default function Game({ history }) {
       }
       setRandomCharacter();
     },
-    [currentCharacter]
+    [currentCharacter, score, setScore]
   );
 
   useEffect(() => {
