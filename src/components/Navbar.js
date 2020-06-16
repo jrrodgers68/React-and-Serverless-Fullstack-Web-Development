@@ -9,11 +9,11 @@ import {
 import { Accent } from '../styled/Random';
 import { useAuth0 } from '../react-auth0-spa';
 
-export default function Navbar() {
+export default function Navbar({ toggleTheme }) {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
   return (
     <StyledNavbar>
-      <StyledNavBrand>
+      <StyledNavBrand className="nav__brand">
         <Link to="/">
           Learn.Build.<Accent>Type.</Accent>
         </Link>
@@ -35,6 +35,7 @@ export default function Navbar() {
             <button onClick={() => logout()}>Logout</button>
           </li>
         )}
+        <button onClick={toggleTheme}>Toggle Theme</button>
       </StyledNavItems>
     </StyledNavbar>
   );
